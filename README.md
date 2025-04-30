@@ -1,59 +1,104 @@
-# PruebaInnerConsultingAngular
+# Explorador de Personajes de Rick y Morty
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.9.
+Esta aplicación web está construida con Angular 19 y permite a los usuarios explorar y buscar personajes del universo de Rick y Morty.
 
-## Development server
+## Tecnologías Utilizadas
 
-To start a local development server, run:
+- **Angular 19.2.9** - Framework principal para construir la aplicación
+- **TypeScript 5.7.2** - Lenguaje de programación utilizado
+- **Componentes Standalone de Angular** - Para una arquitectura más independiente de módulos
+- **RxJS 7.8.0** - Para programación reactiva y manejo de operaciones asíncronas
+- **API de Rick and Morty** - API externa para obtener datos de personajes
+
+## Estructura del Proyecto
+
+La aplicación sigue una arquitectura basada en componentes:
+- `app/` - Código principal de la aplicación
+  - `auth/` - Componentes y servicios de autenticación
+  - `home/` - Pantallas principales para mostrar personajes
+  - `models/` - Modelos de datos
+  - `services/` - Servicios API
+  - `shared/` - Componentes reutilizables (encabezado, pie de página, búsqueda, paginador)
+
+## Requisitos Previos
+
+- Node.js (v18 o posterior)
+- npm (v9 o posterior)
+
+## Instalación
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/kevinalarcon95/prueba-innerConsulting-angular.git
+   cd prueba-innerConsulting-angular
+   ```
+
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+
+## Ejecutar la Aplicación
+
+Inicia el servidor de desarrollo:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Una vez que el servidor esté en funcionamiento, abre tu navegador y dirígete a `http://localhost:4200/`. La aplicación se recargará automáticamente cada vez que modifiques cualquier archivo fuente.
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+También puedes usar el siguiente comando NPM:
 
 ```bash
-ng generate component component-name
+npm start
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Características
 
-```bash
-ng generate --help
-```
+- **Búsqueda de Personajes** - Encuentra personajes por nombre o especie
+- **Interfaz Responsiva** - Diseño para dispositivos móviles que se adapta a diferentes tamaños de pantalla
+- **Detalles de Personajes** - Ver información detallada de cada personaje
+- **Paginación** - Navega a través de múltiples páginas de personajes
 
-## Building
+## Compilar para Producción
 
-To build the project run:
+Para compilar el proyecto para producción:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Esto compilará tu proyecto y almacenará los artefactos de compilación en el directorio `dist/`.
 
-## Running unit tests
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## Comandos Adicionales
 
-```bash
-ng test
-```
+### Generación de Código
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
+Para generar un nuevo componente:
 
 ```bash
-ng e2e
+ng generate component nombre-componente
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Para obtener una lista completa de esquemas disponibles:
 
-## Additional Resources
+```bash
+ng generate --help
+```
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Compatibilidad con Navegadores
+
+La aplicación ha sido probada y funciona bien en:
+- Google Chrome
+- Mozilla Firefox
+- Microsoft Edge
+
+## Recursos
+
+Para más información sobre el uso de Angular CLI, visita la página de [Descripción general y referencia de comandos de Angular CLI](https://angular.dev/tools/cli).
+
+## Autor
+
+Kevin Alarcón
