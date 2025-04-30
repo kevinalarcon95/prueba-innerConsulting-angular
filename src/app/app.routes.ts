@@ -5,7 +5,7 @@ import { CharterDetailComponent } from './home/charter-detail/charter-detail.com
 import { AuthGuard } from './auth/auth.guard';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'character/:id', component: CharterDetailComponent, canActivate: [AuthGuard] },
