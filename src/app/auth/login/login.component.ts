@@ -12,6 +12,11 @@ import { AuthService } from '../auth.service';
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule]
 })
+/**
+ * LoginComponent is responsible for rendering the login form and handling user authentication.
+ * It uses Angular's Reactive Forms to manage form state and validation.
+ * The component interacts with the AuthService to perform login operations.
+ */
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   errorMessage: string = '';

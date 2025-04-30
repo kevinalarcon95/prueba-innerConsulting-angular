@@ -13,6 +13,11 @@ import { FooterComponent } from '../../shared/footer/footer.component';
   templateUrl: './charter-detail.component.html',
   styleUrl: './charter-detail.component.scss'
 })
+/**
+ * CharterDetailComponent is responsible for displaying the details of a specific character.
+ * It retrieves the character ID from the route parameters and fetches the character data from the Rick and Morty API.
+ * The component handles loading states and errors during data fetching.
+ */
 export class CharterDetailComponent implements OnInit {
   character: Character | null = null;
   loading = true;
