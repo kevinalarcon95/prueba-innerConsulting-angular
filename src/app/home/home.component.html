@@ -1,1 +1,15 @@
-<p>home works!</p>
+<div class="container-header">
+  <app-header (searchChanged)="onSearchChange($event)"></app-header>
+</div>
+
+<div class="container-charter">
+  <app-character-list [characters]="filteredCharacters" (characterClick)="onCharacterClick($event)"></app-character-list>
+</div>
+
+<div class="container-paginator">
+  <app-paginator [currentPage]="currentPage" [totalPages]="totalPages" (pageChange)="onPageChange($event)"></app-paginator>
+</div>
+
+<div class="container-footer">
+  <app-footer></app-footer>
+</div>
