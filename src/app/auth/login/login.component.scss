@@ -103,7 +103,7 @@
     border: 1px solid #ccc;
     border-radius: 0.5rem;
     font-size: 0.9rem;
-    color: #ffffff;;
+    color: #272B33;;
     transition: border-color 0.3s ease;
 
     &:focus{
@@ -113,7 +113,7 @@
 
     &.error {
       border: 1px solid #ED761B;
-      background-color: rgba(237, 118, 27, 0.05);
+
     }
   }
 
