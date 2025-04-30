@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { AuthService } from '../auth.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
@@ -46,7 +47,16 @@ export class LoginComponent implements OnInit {
     if (loginResult) {
       this.router.navigate(['/home']);
     } else {
-      this.errorMessage = 'Credenciales incorrectas';
+      this.errorMessage = 'Las credenciales son incorrectas';
     }
+  }
+
+  onReset() {
+    this.loginForm.reset();
+    this.errorMessage = '';
+  }
+
+  isValidField(field: string): boolean {
+    return this.loginForm.get(field)?.invalid && (this.loginForm.get(field)?.touched || this.loginForm.get(field)?.dirty);
   }
 }
