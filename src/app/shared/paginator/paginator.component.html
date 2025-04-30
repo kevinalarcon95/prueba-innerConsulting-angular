@@ -1,0 +1,22 @@
+<div class="pagination">
+  <button class="navigation-button" (click)="loadPreviousPage()" [disabled]="currentPage === 1">
+    &lt;
+  </button>
+
+  <div class="page-numbers">
+    <ng-container *ngFor="let page of getVisiblePageNumbers(); let i = index">
+
+      <span class="ellipsis" *ngIf="i === 0 && shouldShowFirstEllipsis() && page > 1">...</span>
+
+      <button (click)="goToPage(page)" [class.active]="page === currentPage">
+        {{ page }}
+      </button>
+
+      <span class="ellipsis" *ngIf="i < getVisiblePageNumbers().length - 1 && getVisiblePageNumbers()[i+1] > page + 1">...</span>
+    </ng-container>
+  </div>
+
+  <button class="navigation-button" (click)="loadNextPage()" [disabled]="currentPage === totalPages">
+    &gt;
+  </button>
+</div>
