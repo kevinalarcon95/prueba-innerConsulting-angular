@@ -1,0 +1,52 @@
+.container-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.container-charter{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  margin-top: 100px;
+}
+
+.container-paginator{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.container-footer{
+  background-color: #353535;
+  width: 100%;
+  height: 100%;
+  min-height: 100px;
+  padding: 20px 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: flex;
+}
+
+app-footer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .container-charter{
+    margin-top: 130px;
+  }
+}

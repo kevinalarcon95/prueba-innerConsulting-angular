@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="form">
+    <div class="logo-container">
+      <span class="inner-text">
+        inner
+      </span>
+      <span class="consulting-text">
+        Consulting
+      </span>
+    </div>
+    <div class="header-login">
+      <h1 class="title">Iniciar sesión</h1>
+      <p class="subtitle">Ingresa tus credenciales para continuar</p>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="user">Correo electronico</label>
+        <input type="email" id="user" formControlName="user" placeholder="Ingresa tú correo electronico"
+          class="form-control" [ngClass]="{'error': isValidField('user')}" />
+        <div *ngIf="isValidField('user')" class="error-message">
+          <div *ngIf="loginForm.controls['user'].errors?.['required']">El correo es requerido.</div>
+          <div *ngIf="loginForm.controls['user'].errors?.['email']">Formato no valido.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" id="password" formControlName="password" placeholder="Ingresa tú contraseña"
+          class="form-control" [ngClass]="{'error': isValidField('password')}" />
+        <div *ngIf="isValidField('password')" class="error-message">
+          <div *ngIf="loginForm.controls['password'].errors?.['required']">La contraseña es requerida.</div>
+        </div>
+      </div>
+
+      <div class="alert" *ngIf="errorMessage">
+        <div class="alert-danger">
+          {{ errorMessage }}
+        </div>
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid || isLoading" class="btn btn-primary">
+        {{ isLoading ? 'Cargando...' : 'Iniciar sesión' }}
+      </button>
+    </form>
+  </div>
+</div>

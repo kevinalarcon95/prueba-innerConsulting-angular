@@ -1,0 +1,57 @@
+<div class="detail-container">
+  <app-header></app-header>
+
+  <div class="character-detail">
+    <button class="back-button" (click)="goBack()">← Volver</button>
+
+    <div *ngIf="loading" class="loading">
+      <p>Cargando información del personaje...</p>
+    </div>
+
+    <div *ngIf="error" class="error">
+      <p>No se pudo cargar la información del personaje.</p>
+      <button (click)="goBack()">Volver al inicio</button>
+    </div>
+
+    <div *ngIf="character && !loading && !error" class="character-card">
+      <div class="character-image">
+        <img [src]="character.image" [alt]="character.name">
+      </div>
+
+      <div class="character-info">
+        <h1>{{ character.name }}</h1>
+
+        <div class="status-info">
+          <span class="status-circle" [ngClass]="{
+            'status-alive': character.status === 'Alive',
+            'status-dead': character.status === 'Dead',
+            'status-unknown': character.status === 'unknown'
+          }"></span>
+          <span class="status-text">{{ character.status }} - {{ character.species }}</span>
+        </div>
+
+        <div class="info-section">
+          <h2>Género</h2>
+          <p>{{ character.gender }}</p>
+        </div>
+
+        <div class="info-section">
+          <h2>Origen</h2>
+          <p>{{ character.origin.name }}</p>
+        </div>
+
+        <div class="info-section">
+          <h2>Última ubicación conocida</h2>
+          <p>{{ character.location.name }}</p>
+        </div>
+
+        <div class="info-section">
+          <h2>Apariciones</h2>
+          <p>{{ character.episode.length }} episodios</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <app-footer></app-footer>
+</div>

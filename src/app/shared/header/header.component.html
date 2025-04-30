@@ -1,0 +1,34 @@
+<header class="header">
+  <div class="header-container">
+
+    <div class="logo-wrapper">
+      <div class="logo-container">
+        <span class="inner-text">inner</span>
+        <span class="consulting-text">Consulting</span>
+      </div>
+
+      <div class="exit-container-small" *ngIf="isSmallScreen">
+        <button class="exit-button" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> Salir
+        </button>
+      </div>
+    </div>
+
+    <div class="search-container" *ngIf="isSmallScreen">
+      <app-search (searchChanged)="onSearchChange($event)"></app-search>
+    </div>
+
+    <div class="actions-wrapper" *ngIf="!isSmallScreen">
+      <div class="search-container">
+        <app-search (searchChanged)="onSearchChange($event)"></app-search>
+      </div>
+
+      <div class="exit-container-large">
+        <button class="exit-button" (click)="logout()">
+          <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+        </button>
+      </div>
+    </div>
+
+  </div>
+</header>
