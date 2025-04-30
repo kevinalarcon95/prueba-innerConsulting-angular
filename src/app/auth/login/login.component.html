@@ -1,1 +1,31 @@
-<p>login works!</p>
+<div class="container">
+  <div class="form">
+    <h1 class="title">Inicio de sesión</h1>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="user">Email</label>
+        <input type="email" id="user" formControlName="user" class="form-control" />
+        <div *ngIf="loginForm.controls['user'].invalid && (loginForm.controls['user'].dirty || loginForm.controls['user'].touched)" class="alert alert-danger">
+          <div *ngIf="loginForm.controls['user'].errors?.['required']">Email is required.</div>
+          <div *ngIf="loginForm.controls['user'].errors?.['email']">Invalid email format.</div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" formControlName="password" class="form-control" />
+        <div *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].dirty || loginForm.controls['password'].touched)" class="alert alert-danger">
+          <div *ngIf="loginForm.controls['password'].errors?.['required']">Password is required.</div>
+        </div>
+      </div>
+
+      <div *ngIf="errorMessage" class="alert alert-danger">
+        {{ errorMessage }}
+      </div>
+
+      <button type="submit" [disabled]="loginForm.invalid || isLoading" class="btn btn-primary">
+        {{ isLoading ? 'Cargando...' : 'Iniciar' }}
+      </button>
+    </form>
+  </div>
+</div>
