@@ -1,4 +1,4 @@
-<ul class="character-list">
+<ul class="character-list" *ngIf="characters && characters.length > 0">
   <li *ngFor="let character of characters" (click)="onCharacterClick(character.id)" class="character">
     <div class="character-image">
       <img [src]="character.image" alt="{{ character.name }}">
@@ -20,3 +20,11 @@
     </div>
   </li>
 </ul>
+
+<div class="no-results" *ngIf="!characters || characters.length === 0">
+  <div class="no-results-content">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <h3>No se encontraron resultados</h3>
+    <p>Intenta con otra búsqueda</p>
+  </div>
+</div>
