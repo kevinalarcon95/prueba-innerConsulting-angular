@@ -36,7 +36,7 @@ export class AuthService {
   }
 
   get isAuthenticated() {
-    return this._isAuthenticated;
+    return localStorage.getItem('isAuthenticated') === 'true';
   }
 
   setRedirectUrl(url: string) {
