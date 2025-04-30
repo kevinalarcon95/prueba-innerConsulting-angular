@@ -10,6 +10,10 @@ import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
   templateUrl: './search.component.html',
   styleUrl: './search.component.scss'
 })
+/**
+ * SearchComponent is responsible for rendering a search input field and detecting the type of search (name or species).
+ * It uses RxJS to handle search term debouncing and emits the search term and type to the parent component.
+ */
 export class SearchComponent {
   searchText: string = '';
   filterType: string = 'name';

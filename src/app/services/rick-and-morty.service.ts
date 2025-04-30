@@ -7,6 +7,11 @@ import { environment } from '../enviroment/enviroment';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * RickAndMortyService is responsible for interacting with the Rick and Morty API.
+ * It provides methods to fetch characters, character details, and filter characters by name or species.
+ * The service uses HttpClient to make HTTP requests to the API.
+ */
 export class RickAndMortyService {
 
   private apiUrl = environment.apiUrl;

@@ -4,6 +4,11 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+/**
+ * AuthService is responsible for managing user authentication and authorization.
+ * It provides methods to log in, log out, check authentication status, and manage redirect URLs.
+ * The authentication status is stored in local storage to persist across sessions.
+ */
 export class AuthService {
   private _isAuthenticated = false;
   private redirectUrl: string = '/';

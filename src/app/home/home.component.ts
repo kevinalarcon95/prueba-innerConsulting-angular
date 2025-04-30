@@ -16,6 +16,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
 })
+/**
+ * HomeComponent is responsible for displaying a list of characters from the Rick and Morty API.
+ * It handles searching, filtering, and pagination of characters.
+ * The component interacts with the RickAndMortyService to fetch character data and uses Angular's Router for navigation.
+ */
 export class HomeComponent implements OnInit {
   characters: Character[] = [];
   filteredCharacters: any[] = [];
